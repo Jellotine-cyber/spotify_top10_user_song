@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  h1 {
+    color: #1DB954; /* Spotify green */
+  }
+  .dashboard {
+    margin-top: 30px;
+    background-color: #1db95422;
+    padding: 20px;
+    border-radius: 12px;
+  }
+  .dashboard h2 {
+    color: #1db954;
+  }
+  .show,
+.hide {
+    /* allows for the links to be positioned 'ahead' of the list
+       whose appearance they control */
+    position: absolute;
+    top: 0.1em;
+    /* allows for an assigned width, height, etc... */
+    display: inline-block;
+    width: 5em;
+    height: 2em;
+    line-height: 2em;
+    text-align: center;
+}
+
+.hide {
+    left: 0;
+}
+
+.show {
+    /* this is why we have an assigned width */
+    left: 5.1em;
+}
+
+#list {
+    /* hides on page-load */
+    display: none;
+}
+
+#list:target {
+    /* when clicking the 'show' link the #list is targeted
+       and is shown */
+    display: block;
+}
+
+#list:target ~ .show {
+    /* reduces the opacity of the 'show' link, when
+       the list is already shown */
+    opacity: 0.3;
+}
+
+#list:target ~ .hide {
+    /* when the list is shown, the 'hide' link is visible */
+    opacity: 1;
+}
+
+#top {
+    /* allows the links to be positioned visually ahead of,
+       and relative to, the menu */
+    position: relative;
+    /* slightly greater than the defined height of
+       the link elements */
+    padding-top: 2.2em;
+}
+
+#top .hide,
+#top:target  .hide {
+    /* hides the 'hide' link when the list is, itself, hidden */
+    opacity: 0.3;
+}
+.track-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .track {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #1c1c1c;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+  .track img {
+    border-radius: 8px;
+  }
+  
+  .track p {
+    margin: 0;
+    color: white;
+  }
